@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      QR Code Scanner
+    </ion-title>
+    <ion-buttons slot="primary">
+    <ion-button color="primary" [routerLink]="['/about']">
+      About
+      <ion-icon  slot="end" name="alert-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-card>
+    <ion-button color="primary" (click)="scanQRcode()" expand="block">
+      Scan Barcode
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <div *ngIf="scannedBarCode">
+      <ion-item>
+        Scanned code: <strong>{{ scannedBarCode["text"] }}</strong>
+      </ion-item>
+
+    </div>
+  </ion-card>
+
+</ion-content>
